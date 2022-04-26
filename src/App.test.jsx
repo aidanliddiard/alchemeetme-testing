@@ -6,6 +6,6 @@ describe('App', () => {
     render(<App />)
     screen.getByAltText('Alchemy Logo')
 
-    await screen.findByText('Vonta')
+    await screen.findByLabelText(/meet vonta!/i)
   })
 })

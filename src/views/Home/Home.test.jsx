@@ -1,3 +1,6 @@
+import { render, screen } from '@testing-library/react'
+import Home from './Home'
+
 const user = {
   id: 1,
   created_at: '2021-12-13T00:17:29+00:00',
@@ -9,4 +12,14 @@ const user = {
   color: 'crimson',
 }
 
-test('Should render the user profile', () => {})
+describe('User Profile', () => {
+  it('Should render the user profile', async () => {
+    render(<Home />)
+
+    //screen.getByText(/loading/i);
+
+    await screen.findByText('Vonta')
+    screen.findByText('Res Non Verba')
+    screen.findByText('Interests')
+  })
+})
