@@ -12,14 +12,15 @@ const user = {
   color: 'crimson',
 }
 
-describe('User Profile', () => {
-  it('Should render the user profile', async () => {
-    render(<Home />)
+describe('Profile', () => {
+  it('Should render the user profile', () => {})
+  render(<Home user={user} />)
 
-    //screen.getByText(/loading/i);
+  screen.getByRole('heading', { name: /vonta/i })
+  screen.getByText(/res non verba/i)
+  screen.getByRole('heading', { name: /interests/i })
+  screen.getByRole('img', { name: /avatar/i })
+  screen.getByRole('img', { name: /header/i })
 
-    await screen.findByText('Vonta')
-    screen.findByText('Res Non Verba')
-    screen.findByText('Interests')
-  })
+  const list = screen.getByRole('list')
 })
