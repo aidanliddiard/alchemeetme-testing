@@ -22,5 +22,5 @@ describe('Profile', () => {
   screen.getByRole('img', { name: /avatar/i })
   screen.getByRole('img', { name: /header/i })
 
-  const list = screen.getByRole('list')
+  screen.getAllByRole('listitem')
 })
