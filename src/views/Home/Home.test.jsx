@@ -13,14 +13,15 @@ const user = {
 }
 
 describe('Profile', () => {
-  it('Should render the user profile', () => {})
-  render(<Home user={user} />)
+  it('Should render the user profile', () => {
+    render(<Home user={user} />)
 
-  screen.getByRole('heading', { name: /vonta/i })
-  screen.getByText(/res non verba/i)
-  screen.getByRole('heading', { name: /interests/i })
-  screen.getByRole('img', { name: /avatar/i })
-  screen.getByRole('img', { name: /header/i })
+    screen.getByRole('heading', { name: /vonta/i })
+    screen.getByText(/res non verba/i)
+    screen.getByRole('heading', { name: /interests/i })
+    screen.getByRole('img', { name: /avatar/i })
+    screen.getByRole('img', { name: /header/i })
 
-  screen.getAllByRole('listitem')
+    screen.getAllByRole('listitem')
+  })
 })
