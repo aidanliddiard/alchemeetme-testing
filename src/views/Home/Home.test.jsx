@@ -13,7 +13,7 @@ const user = {
 }
 
 describe('Profile', () => {
-  it('Should render the user profile', () => {
+  it('Should render the user profile', async () => {
     render(<Home user={user} />)
 
     screen.getByRole('heading', { name: /vonta/i })
@@ -22,6 +22,7 @@ describe('Profile', () => {
     screen.getByRole('img', { name: /avatar/i })
     screen.getByRole('img', { name: /header/i })
 
-    screen.getAllByRole('listitem')
+    const items = await screen.findAllByRole('listitem')
+    expect(items.length).toEqual(6)
   })
 })
